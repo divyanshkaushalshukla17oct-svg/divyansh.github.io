@@ -1,0 +1,695 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Divyansh Kaushal Shukla, Marketing Intern</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Divyansh Kaushal Shukla, 19, first-year BBA at IIM Bangalore. Wrote the go-to-market plan that took a ₹3 Cr business to ₹11 Cr. Looking for a Marketing Intern role at an agency.">
+<meta property="og:title" content="Divyansh Kaushal Shukla, Marketing Intern">
+<meta property="og:description" content="I wrote the plan that took a ₹3 Cr business to ₹11 Cr. I'm 19. Open the case files.">
+<meta property="og:image" content="my-photo.jpg">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anybody:wdth,wght@50..150,100..900&family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Reenie+Beanie&family=Gaegu:wght@400;700&display=swap">
+<style>
+/* ==========================================================================
+   CONCEPT: a legal-pad notebook on a desk.
+   Layout idea: one long ruled page with a red margin, where everything is
+   taped, pinned, stamped or scribbled onto it. Sections follow AIDA and are
+   marked by small bookmark ribbons (A, I, D, A) hanging from the page edge.
+
+   COLOUR comes from my own photo: the mustard curtain behind me is the page,
+   the black top is the ink. Blue is ballpoint, red is the stamp pad.
+   TYPE: Anybody (condensed poster headlines, like a hand-lettered sign),
+   Newsreader (readable text), Courier Prime (typed labels),
+   Reenie Beanie (margin handwriting), Gaegu (chalk).
+   One deliberate look, so there is no dark mode: this is paper.
+   ========================================================================== */
+:root{
+  --pad:#F1C34F;          /* legal-pad yellow, sampled from the curtain */
+  --paper:#FCF6E6;        /* loose sheets, sticky notes, polaroid */
+  --ink:#16120C;          /* black top / typed ink */
+  --blue:#1B2E9A;         /* ballpoint handwriting */
+  --red:#A8241A;          /* stamp + margin line */
+  --board:#25322C;        /* classroom blackboard */
+  --chalk:#EEEBDC;
+  --tape:rgba(247,238,200,.8);
+  --f-display:"Anybody","Arial Narrow","Impact",sans-serif;
+  --f-text:"Newsreader",Georgia,"Times New Roman",serif;
+  --f-type:"Courier Prime","Courier New",monospace;
+  --f-hand:"Reenie Beanie","Bradley Hand","Segoe Script",cursive;
+  --f-chalk:"Gaegu","Bradley Hand",cursive;
+  --shadow:1px 2px 0 rgba(22,18,12,.16),0 16px 24px -16px rgba(22,18,12,.5);
+  color-scheme:light;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{
+  background-color:var(--pad);
+  /* ruled lines: one thin line every 32px, like a real legal pad */
+  background-image:repeating-linear-gradient(to bottom,transparent 0 31px,rgba(22,18,12,.14) 31px 32px);
+  color:var(--ink);
+  font-family:var(--f-text);
+  font-size:clamp(17px,.9rem + .3vw,19.5px);
+  line-height:1.6;
+  overflow-x:hidden;
+}
+/* safe-area band above the sticky nav */
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--ink);z-index:60}
+/* paper grain: an inline SVG noise filter laid over everything */
+body::after{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:70;opacity:.22;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .2 0 0 0 0 .15 0 0 0 0 .05 0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:2px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip{position:absolute;left:12px;top:-60px;background:var(--paper);padding:10px 14px;z-index:100;font-family:var(--f-type)}
+.skip:focus{top:calc(env(safe-area-inset-top,0px) + 10px)}
+
+/* ---------- page frame: punched holes + double red margin ---------- */
+.wrap{
+  position:relative;max-width:1200px;margin-inline:auto;
+  padding-left:max(40px,env(safe-area-inset-left,0px));
+  padding-right:max(16px,env(safe-area-inset-right,0px));
+  padding-block:0 40px;
+}
+.wrap::before{ /* red margin */
+  content:"";position:absolute;top:0;bottom:0;left:26px;width:7px;opacity:.6;
+  background:linear-gradient(90deg,var(--red) 0 2px,transparent 2px 5px,var(--red) 5px 7px);
+}
+.wrap::after{ /* binder holes */
+  content:"";position:absolute;top:0;bottom:0;left:5px;width:14px;opacity:.55;
+  background:radial-gradient(circle at 7px 7px,var(--ink) 0 5px,transparent 5.5px) 0 90px/14px 420px repeat-y;
+}
+@media (min-width:900px){.wrap{padding-left:max(88px,env(safe-area-inset-left,0px))}.wrap::before{left:58px}.wrap::after{left:18px}}
+
+/* ---------- nav ---------- */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:var(--ink);color:var(--paper);font-family:var(--f-type);font-size:.88rem}
+.nav-in{max-width:1200px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;
+  padding:8px max(16px,env(safe-area-inset-right,0px)) 8px max(16px,env(safe-area-inset-left,0px))}
+.brand{font-family:var(--f-display);font-stretch:70%;font-weight:800;font-size:1.25rem;text-decoration:none;letter-spacing:.02em}
+.brand span{font-family:var(--f-type);font-weight:400;font-size:.8rem;opacity:.65;margin-left:6px}
+.nav nav{display:flex;gap:4px}
+.nav nav a{text-decoration:none;padding:10px 12px;min-height:44px;display:inline-flex;align-items:center;border-bottom:2px solid transparent}
+.nav nav a:hover,.nav nav a[aria-current="true"]{border-bottom-color:var(--pad);color:var(--pad)}
+.menu{display:none;background:none;border:1.5px solid var(--paper);color:var(--paper);font:inherit;padding:0 14px;min-height:44px;cursor:pointer;border-radius:3px}
+@media (max-width:720px){
+  .menu{display:inline-flex;align-items:center}
+  .nav nav{display:none;width:100%;flex-direction:column;padding-bottom:6px}
+  .nav.open nav{display:flex}
+}
+
+/* ---------- shared bits ---------- */
+.sec{position:relative;padding-top:clamp(64px,10vw,130px)}
+.hook{font-family:var(--f-display);font-stretch:68%;font-weight:800;line-height:.98;letter-spacing:-.005em;
+  font-size:clamp(2rem,1.1rem + 4vw,4rem);max-width:19ch;text-wrap:balance;margin:0}
+.hand{font-family:var(--f-hand);color:var(--blue);font-size:clamp(1.5rem,1.2rem + 1vw,2.1rem);line-height:1;margin:.3em 0 0;transform:rotate(-1.5deg);display:inline-block}
+.typed{font-family:var(--f-type);font-size:.82rem;letter-spacing:.06em;text-transform:uppercase;margin:0}
+.idx{ /* bookmark ribbon: marks the AIDA step without a literal heading */
+  position:absolute;right:0;top:0;width:34px;height:64px;background:var(--red);color:var(--paper);
+  clip-path:polygon(0 0,100% 0,100% 100%,50% 80%,0 100%);display:grid;place-items:start center;padding-top:8px;
+  font-family:var(--f-display);font-weight:800;font-size:1.15rem;
+}
+.idx i{font-style:normal}
+.tilt{transform:rotate(var(--r,0deg))}
+.tape{position:absolute;width:92px;height:26px;background:var(--tape);box-shadow:0 1px 2px rgba(22,18,12,.2);
+  clip-path:polygon(0 0,100% 0,98% 20%,100% 40%,98% 60%,100% 80%,98% 100%,0 100%,2% 80%,0 60%,2% 40%,0 20%);transform:rotate(var(--tr,-4deg))}
+.stamp{display:inline-block;border:3px solid var(--red);color:var(--red);padding:.1em .55em;border-radius:4px;
+  font:700 .95rem/1.3 var(--f-type);letter-spacing:.12em;text-transform:uppercase;transform:rotate(-6deg);
+  mix-blend-mode:multiply;filter:url(#rough);background:rgba(168,36,26,.04)}
+.pin{position:absolute;top:-9px;left:50%;width:18px;height:18px;margin-left:-9px;border-radius:50%;
+  background:radial-gradient(circle at 35% 30%,#e8695a,var(--red) 55%,#5e130c);box-shadow:2px 5px 4px rgba(22,18,12,.35)}
+.btn{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:0 22px;background:var(--ink);color:var(--paper);
+  font:700 .95rem var(--f-type);letter-spacing:.05em;text-decoration:none;border-radius:2px;box-shadow:4px 4px 0 var(--red);
+  transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--red)}
+.plain{font-family:var(--f-hand);font-size:1.7rem;color:var(--blue);text-decoration:underline wavy rgba(27,46,154,.4);text-underline-offset:5px;min-height:44px;display:inline-flex;align-items:center}
+
+/* hand-drawn underline that draws itself */
+.mark{position:relative;display:inline-block;color:var(--blue)}
+.squig{position:absolute;left:-2%;bottom:-.1em;width:104%;height:.3em;fill:none;stroke:var(--red);stroke-width:5;stroke-linecap:round;overflow:visible}
+.squig path{stroke-dasharray:1;stroke-dashoffset:0}
+.hero .squig path{animation:draw 1.1s .5s cubic-bezier(.6,0,.2,1) both}
+.js .rv:not(.in) .squig path{stroke-dashoffset:1}
+.rv .squig path{transition:stroke-dashoffset 1s .3s}
+@keyframes draw{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+
+/* scroll reveal moves things only, never hides them */
+.rv{transform:translateY(0) rotate(var(--r,0deg));transition:transform .8s cubic-bezier(.2,.7,.2,1) calc(var(--i,0) * 90ms)}
+.js .rv:not(.in){transform:translateY(22px) rotate(var(--r,0deg))}
+
+/* ---------- 1. HERO (attention) ---------- */
+.hero{display:grid;gap:clamp(20px,3vw,40px) clamp(24px,5vw,72px);padding-top:clamp(36px,6vw,80px);
+  grid-template-columns:minmax(0,1.4fr) minmax(0,.8fr);grid-template-areas:"text photo" "ticket photo";align-items:start}
+.hero-text{grid-area:text;position:relative}
+.hero h1{font-family:var(--f-display);font-stretch:66%;font-weight:850;font-size:clamp(2.6rem,1.2rem + 6.6vw,6.1rem);
+  line-height:.92;letter-spacing:-.012em;margin:.35em 0 .3em;text-wrap:balance}
+.lede{font-size:1.2em;max-width:34em;margin:0 0 1.4em}
+.lede em{font-style:italic}
+.cta-row{display:flex;flex-wrap:wrap;align-items:center;gap:8px 28px}
+.polaroid{grid-area:photo;position:relative;margin:clamp(0px,3vw,40px) 0 0;justify-self:center;width:min(100%,380px);
+  background:var(--paper);padding:12px 12px 74px;box-shadow:var(--shadow);--r:2.6deg;transform:rotate(var(--r))}
+.polaroid .tape{top:-14px;left:50%;margin-left:-46px}
+.photo{position:relative;aspect-ratio:833/1129;background:var(--ink);overflow:hidden}
+.photo img{width:100%;height:100%;object-fit:cover;object-position:50% 20%}
+.photo .initials{display:none;position:absolute;inset:0;place-items:center;font:850 5rem var(--f-display);color:var(--pad);font-stretch:66%}
+.photo.nophoto img{display:none}.photo.nophoto .initials{display:grid}
+.polaroid figcaption{position:absolute;left:14px;right:14px;bottom:10px;font-family:var(--f-hand);color:var(--blue);font-size:1.5rem;line-height:.95;transform:rotate(-1deg)}
+.photo-note{position:absolute;right:-14px;bottom:-62px;font-family:var(--f-hand);font-size:1.45rem;line-height:.95;color:var(--blue);width:9.5em;transform:rotate(4deg);text-align:left}
+.ticket{grid-area:ticket;--stub:clamp(150px,34%,210px);display:grid;grid-template-columns:minmax(0,1fr) var(--stub);background:var(--paper);
+  max-width:600px;box-shadow:var(--shadow);--r:-1.6deg;transform:rotate(var(--r));
+  -webkit-mask:radial-gradient(9px at calc(100% - var(--stub)) 0,#0000 97%,#000),radial-gradient(9px at calc(100% - var(--stub)) 100%,#0000 97%,#000);
+  -webkit-mask-composite:source-in;
+  mask:radial-gradient(9px at calc(100% - var(--stub)) 0,#0000 97%,#000),radial-gradient(9px at calc(100% - var(--stub)) 100%,#0000 97%,#000);
+  mask-composite:intersect}
+.ticket-main{padding:18px 20px 16px}
+.ticket-main .big{font-family:var(--f-display);font-stretch:62%;font-weight:850;font-size:clamp(1.9rem,1.2rem + 2.6vw,3rem);line-height:.95;margin:.2em 0 .25em}
+.ticket-main .src{font-family:var(--f-type);font-size:.78rem;opacity:.75;margin:0}
+.ticket-stub{border-left:2px dashed rgba(22,18,12,.4);padding:16px 14px;display:flex;flex-direction:column;justify-content:space-between;gap:8px;min-width:0}
+.ticket-stub .fig{font-family:var(--f-display);font-stretch:62%;font-weight:850;font-size:1.5rem;line-height:1;margin:0;white-space:nowrap}
+.ticket-stub .stamp{align-self:flex-start;font-size:.85rem;transform:rotate(-5deg)}
+@media (max-width:860px){
+  .hero{grid-template-columns:1fr;grid-template-areas:"text" "photo" "ticket"}
+  .polaroid{width:min(78%,300px);justify-self:start;margin-left:8px}
+  .photo-note{right:-4px;bottom:-60px;width:8em}
+  .ticket{margin-top:40px;grid-template-columns:minmax(0,1fr);-webkit-mask:none;mask:none}
+  .ticket-stub{border-left:0;border-top:2px dashed rgba(22,18,12,.4);flex-direction:row;align-items:center;flex-wrap:wrap}
+}
+
+/* ---------- 2. INTEREST (story) ---------- */
+.trail{list-style:none;margin:clamp(36px,5vw,64px) 0 0;padding:0;position:relative;display:grid;gap:clamp(26px,4vw,48px)}
+.trail::before{content:"";position:absolute;left:27px;top:20px;bottom:20px;border-left:3px dashed rgba(22,18,12,.45)}
+.stop{position:relative;display:grid;grid-template-columns:56px minmax(0,1fr);gap:18px;max-width:640px}
+.stop:nth-child(even){margin-left:clamp(0px,10vw,150px)}
+.stop:nth-child(3n){--r:.5deg}
+.dd-wrap{width:56px;height:56px;border-radius:50%;background:var(--paper);border:2.5px solid var(--ink);display:grid;place-items:center;box-shadow:3px 3px 0 var(--ink);z-index:1}
+.dd{width:30px;height:30px;fill:none;stroke:var(--ink);stroke-width:2.8;stroke-linecap:round;stroke-linejoin:round}
+.stop-body{background:var(--paper);padding:16px 20px 18px;box-shadow:var(--shadow);position:relative}
+.stop-body .typed{opacity:.7;font-size:.76rem}
+.stop-body h3{font-family:var(--f-display);font-stretch:70%;font-weight:800;font-size:clamp(1.4rem,1.1rem + 1.2vw,1.9rem);line-height:1;margin:.3em 0 .4em}
+.stop-body p{margin:0}
+.stop .hand{position:absolute;right:10px;bottom:-30px;font-size:1.5rem;margin:0;transform:rotate(-2deg);white-space:nowrap}
+.film{position:relative;background:var(--ink);color:var(--paper);margin:clamp(56px,8vw,100px) 0 0;padding:44px clamp(18px,4vw,48px);max-width:860px;--r:-.7deg;transform:rotate(var(--r));box-shadow:var(--shadow)}
+.film::before,.film::after{content:"";position:absolute;left:0;right:0;height:12px;
+  background:repeating-linear-gradient(90deg,var(--pad) 0 14px,transparent 14px 28px) 8px 0/auto 100% repeat-x}
+.film::before{top:14px}.film::after{bottom:14px}
+.film blockquote{margin:0;font-family:var(--f-display);font-stretch:68%;font-weight:700;font-size:clamp(1.6rem,1rem + 2.8vw,3rem);line-height:1.02;text-wrap:balance}
+.film cite{display:block;margin-top:14px;font:400 .85rem var(--f-type);color:var(--pad);font-style:normal;letter-spacing:.04em}
+.film .hand{color:var(--blue);position:absolute;right:20px;bottom:-38px;transform:rotate(-3deg);margin:0;font-size:1.7rem}
+.score{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:22px 18px;margin-top:clamp(64px,9vw,110px);align-items:start}
+.stat{margin:0;background:var(--paper);padding:14px 16px 16px;box-shadow:var(--shadow);position:relative;--r:-1.5deg}
+.stat:nth-child(even){--r:1.6deg;margin-top:26px}
+.stat:nth-child(3){--r:-.6deg}
+.stat b{display:block;white-space:nowrap;font-family:var(--f-display);font-stretch:62%;font-weight:850;font-size:clamp(2.6rem,1.6rem + 3vw,4.2rem);line-height:.9}
+.stat span{display:block;font-size:.88em;line-height:1.3;margin-top:6px}
+.stat.s1{grid-column:span 2;background:var(--ink);color:var(--paper)}
+.stat.s1 b{color:var(--pad);font-size:clamp(3.4rem,1.8rem + 5vw,6rem)}
+@media (max-width:520px){.stat.s1{grid-column:1/-1}}
+
+/* ---------- 3. DESIRE (proof) ---------- */
+.files{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:clamp(48px,6vw,72px) 24px;margin-top:clamp(56px,7vw,90px)}
+.file{position:relative;background:var(--paper);padding:30px clamp(18px,3vw,34px) 28px;box-shadow:var(--shadow);transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s}
+.file:hover{transform:rotate(0deg) translateY(-6px)}
+.file .tab{position:absolute;left:20px;top:-27px;height:28px;padding:5px 22px 0;background:var(--paper);font:700 .76rem/1.8 var(--f-type);letter-spacing:.08em;text-transform:uppercase;
+  clip-path:polygon(0 100%,7% 0,93% 0,100% 100%);white-space:nowrap}
+.file .stamp{position:absolute;right:16px;top:-18px;background:var(--paper)}
+.file h3{font-family:var(--f-display);font-stretch:66%;font-weight:850;font-size:clamp(1.8rem,1.2rem + 2vw,2.8rem);line-height:.95;margin:0 0 .6em;padding-right:90px}
+.brief{display:grid;grid-template-columns:110px minmax(0,1fr);gap:14px 18px;margin:0}
+.brief dt{font:700 .74rem/1.4 var(--f-type);letter-spacing:.08em;text-transform:uppercase;color:var(--red);padding-top:.5em}
+.brief dd{margin:0}
+.brief ul{margin:0;padding-left:1.1em}
+.brief li{margin:0 0 .3em}
+@media (max-width:620px){.brief{grid-template-columns:1fr;gap:4px}.brief dd{margin-bottom:12px}.file h3{padding-right:0;margin-top:20px}}
+.f-big{grid-column:1/8;--r:-.8deg;transform:rotate(var(--r))}
+.f-sb{grid-column:8/13;margin-top:70px;--r:1.2deg;transform:rotate(var(--r))}
+.f-tvs{grid-column:3/10;--r:-.4deg;transform:rotate(var(--r))}
+.f-note{grid-column:10/13;align-self:center}
+.f-note .hand{font-size:2rem;line-height:.95;display:block;transform:rotate(3deg)}
+@media (max-width:980px){.f-big,.f-sb,.f-tvs,.f-note{grid-column:1/-1;margin-top:0}}
+.chart{width:100%;max-width:400px;height:auto;margin-top:4px;overflow:visible}
+.chart text{font-family:var(--f-type);font-size:11px;fill:var(--ink)}
+.chart .hw{font-family:var(--f-hand);font-size:30px;fill:var(--blue)}
+.chart .big{font-family:var(--f-display);font-weight:850;font-size:30px}
+.nope{font-family:var(--f-hand);font-size:1.7rem;line-height:1;color:var(--blue);margin:0}
+
+.desk{margin-top:clamp(70px,9vw,120px);display:grid;gap:18px}
+.desk h3,.proof h3{margin:0}
+.tags{display:flex;flex-wrap:wrap;gap:14px 12px;align-items:flex-start}
+.tag{background:var(--paper);padding:10px 16px;box-shadow:var(--shadow);font:700 .9rem var(--f-type);position:relative;--r:-2deg;transform:rotate(var(--r));
+  clip-path:polygon(0 0,100% 0,100% 100%,0 100%)}
+.tag:nth-child(2n){--r:1.8deg}.tag:nth-child(3n){--r:-.6deg;background:var(--ink);color:var(--paper)}
+.tag small{display:block;font-weight:400;font-size:.76rem;opacity:.8}
+.luggage{display:flex;flex-wrap:wrap;gap:16px}
+.lug{position:relative;background:#F4D9A6;padding:12px 18px 12px 38px;box-shadow:var(--shadow);font:700 .95rem/1.2 var(--f-type);--r:2deg;transform:rotate(var(--r));
+  clip-path:polygon(14px 0,100% 0,100% 100%,14px 100%,0 50%)}
+.lug::before{content:"";position:absolute;left:14px;top:50%;width:9px;height:9px;margin-top:-4.5px;border-radius:50%;background:var(--pad);border:1.5px solid var(--ink)}
+.lug:nth-child(2){--r:-1.4deg}.lug small{display:block;font-weight:400;font-size:.76rem}
+.sub{font-family:var(--f-display);font-stretch:68%;font-weight:800;font-size:clamp(1.5rem,1.1rem + 1.4vw,2.2rem);line-height:1;margin:0}
+
+/* chalkboard: teaching volunteer gets real space */
+.board{position:relative;margin-top:clamp(70px,9vw,120px);color:var(--chalk);background:
+  radial-gradient(ellipse at 20% 15%,rgba(255,255,255,.08),transparent 55%),radial-gradient(ellipse at 80% 90%,rgba(255,255,255,.05),transparent 50%),var(--board);
+  border:12px solid #8a5a2b;border-radius:3px;box-shadow:var(--shadow),inset 0 0 40px rgba(0,0,0,.45);
+  padding:clamp(26px,5vw,60px);display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.8fr);gap:30px 48px;--r:.4deg;transform:rotate(var(--r))}
+.board h2{font-family:var(--f-chalk);font-weight:700;font-size:clamp(2rem,1.2rem + 3.5vw,3.8rem);line-height:1;margin:.2em 0 .5em;text-wrap:balance}
+.board p{font-family:var(--f-chalk);font-size:clamp(1.25rem,1.05rem + .8vw,1.65rem);line-height:1.35;margin:0 0 .7em}
+.board .typed{color:var(--pad);opacity:.9}
+.chalk-side{display:grid;gap:16px;align-content:center;font-family:var(--f-chalk);font-size:clamp(2rem,1.2rem + 2.6vw,3.4rem);line-height:1.05;opacity:.92}
+.chalk-side span:nth-child(2){transform:rotate(-3deg);margin-left:12%}
+.chalk-side span:nth-child(3){transform:rotate(2deg);margin-left:4%}
+.chalk-side small{font-size:.38em;display:block;opacity:.75}
+.board blockquote{grid-column:1/-1;margin:10px 0 0;padding-top:18px;border-top:2px dashed rgba(238,235,220,.35);font-family:var(--f-chalk);font-size:clamp(1.3rem,1rem + 1.2vw,2rem);line-height:1.2}
+.board cite{display:block;font:400 .8rem var(--f-type);font-style:normal;color:var(--pad);margin-top:8px}
+@media (max-width:780px){.board{grid-template-columns:1fr}.chalk-side{grid-auto-flow:column;gap:8px;font-size:1.6rem;justify-content:start}.chalk-side span:nth-child(n){margin-left:0}}
+
+.proof{margin-top:clamp(70px,9vw,120px)}
+.pinboard{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:34px 22px;margin-top:34px;align-items:start}
+.note{position:relative;background:var(--paper);padding:26px 22px 20px;box-shadow:var(--shadow);--r:-1.2deg;transform:rotate(var(--r))}
+.note h4{font-family:var(--f-display);font-stretch:68%;font-weight:800;font-size:1.55rem;line-height:1;margin:.1em 0 .4em}
+.note p{margin:0 0 .5em}
+.note .typed{opacity:.7;font-size:.74rem;margin-bottom:6px}
+.n1{grid-column:1/8;--r:-.9deg;padding-bottom:30px}
+.n1 h4{font-size:clamp(1.8rem,1.2rem + 2vw,2.7rem)}
+.n2{grid-column:8/13;--r:1.6deg;margin-top:36px}
+.n3{grid-column:2/7;--r:1deg}
+.n4{grid-column:7/12;--r:-1.4deg;margin-top:20px;background:var(--ink);color:var(--paper)}
+.n4 .typed{color:var(--pad);opacity:1}
+@media (max-width:860px){.n1,.n2,.n3,.n4{grid-column:1/-1;margin-top:0}}
+
+/* ---------- Fit: what Monday looks like ---------- */
+.monday{margin:clamp(34px,5vw,60px) 0 0;padding:0;list-style:none;display:grid;gap:16px;max-width:760px}
+.monday li{display:grid;grid-template-columns:44px minmax(0,1fr);gap:14px;align-items:start;font-size:1.12em}
+.monday li:nth-child(even){margin-left:clamp(0px,7vw,90px)}
+.tick{width:38px;height:38px;border:2.5px solid var(--ink);background:var(--paper);position:relative;margin-top:2px}
+.tick svg{position:absolute;left:-4px;top:-10px;width:44px;height:44px;fill:none;stroke:var(--blue);stroke-width:4.5;stroke-linecap:round;stroke-linejoin:round}
+.tick path{stroke-dasharray:1;stroke-dashoffset:0;transition:stroke-dashoffset .6s .3s}
+.js .rv:not(.in) .tick path{stroke-dashoffset:1}
+.monday b{font-family:var(--f-display);font-stretch:70%;font-weight:800;font-size:1.35em;display:block;line-height:1.05}
+.card{position:relative;background:var(--paper);padding:30px 26px 24px;box-shadow:var(--shadow);max-width:520px;margin-top:clamp(40px,6vw,70px);--r:1.4deg;transform:rotate(var(--r))}
+.card .tape{top:-13px;left:24px}
+.card blockquote{margin:6px 0 0;font:italic 500 1.5em/1.25 var(--f-text)}
+.card cite{display:block;margin-top:10px;font:400 .8rem var(--f-type);font-style:normal;opacity:.7}
+
+/* ---------- 4. ACTION ---------- */
+.close h2{max-width:16ch}
+.reach{list-style:none;padding:0;margin:clamp(32px,5vw,56px) 0 0;display:grid;gap:0;max-width:760px;background:var(--paper);box-shadow:var(--shadow);--r:-.5deg;transform:rotate(var(--r))}
+.reach li{display:grid;grid-template-columns:96px minmax(0,1fr);gap:6px 16px;align-items:center;padding:14px 20px;border-bottom:1.5px dashed rgba(22,18,12,.3)}
+.reach li:last-child{border-bottom:0}
+.reach .lab{font:700 .74rem var(--f-type);letter-spacing:.1em;text-transform:uppercase;color:var(--red)}
+.reach .val{font-family:var(--f-display);font-stretch:72%;font-weight:700;font-size:clamp(1.15rem,.9rem + 1.5vw,1.8rem);overflow-wrap:anywhere;user-select:all;min-width:0}
+.reach .acts{display:flex;gap:8px;flex-wrap:wrap;grid-column:2}
+.reach .acts a,.copy{font:700 .78rem var(--f-type);min-height:44px;padding:0 14px;display:inline-flex;align-items:center;border:1.5px solid var(--ink);background:none;color:var(--ink);cursor:pointer;text-decoration:none;border-radius:2px}
+.reach .acts a:hover,.copy:hover{background:var(--ink);color:var(--paper)}
+@media (max-width:620px){.reach li{grid-template-columns:1fr}.reach .acts{grid-column:1}}
+.cv-row{margin-top:30px;display:flex;flex-wrap:wrap;gap:12px 26px;align-items:center}
+.final{margin:clamp(70px,10vw,130px) 0 0;max-width:900px}
+.final blockquote{margin:0;font-family:var(--f-display);font-stretch:66%;font-weight:850;font-size:clamp(2.2rem,1.2rem + 4.6vw,5rem);line-height:.95;text-wrap:balance}
+.final blockquote mark{background:none;color:var(--blue);text-decoration:underline wavy var(--red) 4px;text-underline-offset:.12em}
+.final cite{display:block;margin-top:14px;font:400 .85rem var(--f-type);font-style:normal;opacity:.8}
+footer{margin-top:clamp(70px,9vw,120px);padding-top:22px;border-top:3px double rgba(22,18,12,.5);font-family:var(--f-type);font-size:.85rem;display:grid;gap:6px}
+footer .hand{font-size:1.9rem;margin:0 0 .3em;display:block;transform:none}
+footer p{margin:0}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .rv,.btn,.file{transition:none}
+  .hero .squig path{animation:none}
+  .js .rv:not(.in){transform:rotate(var(--r,0deg))}
+  .js .rv:not(.in) .squig path,.js .rv:not(.in) .tick path{stroke-dashoffset:0}
+}
+@media print{
+  body{background:#fff;background-image:none}body::before,body::after,.nav,.wrap::before,.wrap::after,.tape,.idx,.pin,.photo-note,.cta-row{display:none!important}
+  *{box-shadow:none!important;transform:none!important}.sec{padding-top:24px;break-inside:avoid}.board{border-width:2px}
+}
+</style>
+</head>
+<body>
+
+<!-- hidden SVG defs: rough-edge filter for stamps + doodle icons -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <filter id="rough"><feTurbulence type="fractalNoise" baseFrequency=".06" numOctaves="3" seed="4" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.6"/></filter>
+  <symbol id="i-bubble" viewBox="0 0 48 48"><path d="M6 8h36a4 4 0 0 1 4 4v18a4 4 0 0 1-4 4H23l-10 9v-9H6a4 4 0 0 1-4-4V12a4 4 0 0 1 4-4z"/><path d="M12 17h24M12 25h15"/></symbol>
+  <symbol id="i-mic" viewBox="0 0 48 48"><rect x="18" y="4" width="12" height="24" rx="6"/><path d="M10 22c0 9 6 14 14 14s14-5 14-14M24 36v8M16 44h16"/></symbol>
+  <symbol id="i-cup" viewBox="0 0 48 48"><path d="M8 14h28l-3 26a4 4 0 0 1-4 4H15a4 4 0 0 1-4-4z"/><path d="M36 20h3a5 5 0 0 1 0 11h-4"/><path d="M16 4c-2 3 2 4 0 7M25 4c-2 3 2 4 0 7"/></symbol>
+  <symbol id="i-horn" viewBox="0 0 48 48"><path d="M5 20h10l21-11v30L15 28H5z"/><path d="M11 28l3 13h6l-3-13"/><path d="M42 18c3 3 3 9 0 12"/></symbol>
+  <symbol id="i-up" viewBox="0 0 48 48"><path d="M4 40l13-13 8 8 18-22"/><path d="M30 13h13v13"/></symbol>
+</svg>
+
+<a class="skip" href="#story">Skip to the story</a>
+
+<header class="nav" id="nav">
+  <div class="nav-in">
+    <a class="brand" href="#top" aria-label="Divyansh Kaushal Shukla, back to top">DKS<span>/ the notebook</span></a>
+    <button class="menu" id="menu" aria-expanded="false" aria-controls="navlinks">Index</button>
+    <nav id="navlinks" aria-label="Sections">
+      <a href="#story">How I got here</a>
+      <a href="#files">Case files</a>
+      <a href="#fit">Monday</a>
+      <a href="#hello">Say hi</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+<main id="top">
+
+<!-- ============ A: ATTENTION ============ -->
+<section class="hero" aria-labelledby="h1">
+  <div class="hero-text">
+    <p class="typed rv">File 001 · Applicant · Marketing Intern, agency side · Lucknow → IIM Bangalore</p>
+    <h1 id="h1" class="rv" style="--i:1">I wrote the plan that took a ₹3&nbsp;Cr business to ₹11&nbsp;Cr. <span class="mark">I’m&nbsp;19.<svg class="squig" viewBox="0 0 200 14" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M2 9 C 30 2, 60 13, 100 7 S 170 3, 198 9"/></svg></span></h1>
+    <p class="lede rv" style="--i:2">First year at IIM Bangalore. Four roles so far, from a Starbucks Instagram to a go-to-market plan. Next I’d like to work on your clients.</p>
+    <p class="cta-row rv" style="--i:3"><a class="btn" href="#files">Open the case files <span aria-hidden="true">↓</span></a><a class="plain" href="#hello">or skip to saying hi</a></p>
+  </div>
+
+  <figure class="polaroid rv" style="--i:2">
+    <span class="tape" aria-hidden="true"></span>
+    <div class="photo" id="photo">
+      <!-- PHOTO: save your portrait next to this file as my-photo.jpg -->
+      <img src="my-photo.jpg" width="833" height="1129" alt="Portrait of Divyansh Kaushal Shukla in a black high-neck top, against a mustard curtain" fetchpriority="high" onerror="document.getElementById('photo').classList.add('nophoto')">
+      <span class="initials" aria-hidden="true">DKS</span>
+    </div>
+    <figcaption>me, 19. Lucknow → IIM Bangalore</figcaption>
+    <span class="photo-note" aria-hidden="true">the curtain picked this page’s colour ↙</span>
+  </figure>
+
+  <div class="ticket rv" style="--i:3">
+    <div class="ticket-main">
+      <p class="typed">Admit one · FY 2025–26 · Mishra Enterprise</p>
+      <p class="big">“Show me the money!”</p>
+      <p class="src">Jerry Maguire (1996). Fine. Here it is.</p>
+    </div>
+    <div class="ticket-stub">
+      <p class="typed" style="font-size:.7rem">Turnover</p>
+      <p class="fig">₹3 Cr → ₹<span data-count="11" data-from="3">11</span> Cr</p>
+      <span class="stamp">+<span data-count="267">267</span>%</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ I: INTEREST ============ -->
+<section class="sec" id="story" aria-labelledby="h-story">
+  <span class="idx" title="Interest" aria-hidden="true"><i>I</i></span>
+  <h2 class="hook" id="h-story">Why would anyone hand a 19-year-old a go-to-market plan?</h2>
+  <p class="hand">Fair question. Here’s the paper trail.</p>
+
+  <ol class="trail">
+    <li class="stop rv">
+      <div class="dd-wrap"><svg class="dd" aria-hidden="true"><use href="#i-bubble"/></svg></div>
+      <div class="stop-body">
+        <p class="typed">Storytelling Club · school</p>
+        <h3>Club Head. I got people to tell stories.</h3>
+        <p>I organised the events, mentored the members and built a habit of creative communication. Turns out that’s most of marketing: make people care, then get out of the way.</p>
+      </div>
+    </li>
+    <li class="stop rv" style="--i:1">
+      <div class="dd-wrap"><svg class="dd" aria-hidden="true"><use href="#i-mic"/></svg></div>
+      <div class="stop-body">
+        <p class="typed">Student Council · school</p>
+        <h3>Host, live, no second takes.</h3>
+        <p>I hosted the International Chief Justice Conference and Celesta. Coordination, protocol and public speaking, all at once, in front of the room.</p>
+      </div>
+    </li>
+    <li class="stop rv">
+      <div class="dd-wrap"><svg class="dd" aria-hidden="true"><use href="#i-cup"/></svg></div>
+      <div class="stop-body">
+        <p class="typed">Starbucks franchise outlet</p>
+        <h3>Social Media Handler. Local voice, global brand.</h3>
+        <p>I ran the outlet’s Instagram. The hard part was sounding like the neighbourhood without drifting from the brand. I built engagement plays to grow interaction and the local customer base.</p>
+      </div>
+    </li>
+    <li class="stop rv" style="--i:1">
+      <div class="dd-wrap"><svg class="dd" aria-hidden="true"><use href="#i-horn"/></svg></div>
+      <div class="stop-body">
+        <p class="typed">TVS Dealership</p>
+        <h3>Marketing Intern. Flyers, posters, banners.</h3>
+        <p>I helped plan and run product promotion campaigns, and I designed the flyers, posters and banners that went with them.</p>
+        <span class="hand" aria-hidden="true">(yes, I designed the flyers myself)</span>
+      </div>
+    </li>
+    <li class="stop rv">
+      <div class="dd-wrap"><svg class="dd" aria-hidden="true"><use href="#i-up"/></svg></div>
+      <div class="stop-body">
+        <p class="typed">Mishra Enterprise</p>
+        <h3>Marketing Intern. The ₹3 Cr → ₹11 Cr plan.</h3>
+        <p>I did the market research to find customer segments nobody was serving, then designed and ran the go-to-market strategy with leadership. Turnover went from ₹3 Cr to ₹11 Cr in FY2025–26.</p>
+      </div>
+    </li>
+  </ol>
+
+  <figure class="film rv" style="margin-bottom:0">
+    <blockquote>“Not everyone can become a great artist, but a great artist can come from anywhere.”</blockquote>
+    <cite>Anton Ego, Ratatouille (2007)</cite>
+    <span class="hand" aria-hidden="true">Lucknow, if you were wondering.</span>
+  </figure>
+
+  <div class="score" aria-label="The numbers">
+    <p class="stat s1 rv"><b><span data-count="267">267</span>%</b><span>turnover growth at Mishra Enterprise in FY2025–26 (₹3 Cr → ₹11 Cr)</span></p>
+    <p class="stat rv" style="--i:1"><b data-count="4">4</b><span>roles, from classroom to client work</span></p>
+    <p class="stat rv" style="--i:2"><b data-count="3000">3,000</b><span>followers on my own Instagram page</span></p>
+    <p class="stat rv" style="--i:1"><b><span data-count="95">95</span>%</b><span>aggregate in Class XII, Science (PCM)</span></p>
+    <p class="stat rv" style="--i:2"><b><span data-count="97">97</span>%</b><span>in English, Class XII</span></p>
+    <p class="stat rv" style="--i:3"><b data-count="3">3</b><span>languages: English, Hindi, and basic German</span></p>
+  </div>
+</section>
+
+<!-- ============ D: DESIRE ============ -->
+<section class="sec" id="files" aria-labelledby="h-files">
+  <span class="idx" title="Desire" aria-hidden="true"><i>D</i></span>
+  <h2 class="hook" id="h-files">Don’t take my word for it. Open the files.</h2>
+
+  <div class="files">
+    <article class="file f-big rv">
+      <span class="tab">Case file · Mishra Enterprise</span>
+      <span class="stamp">Result +267%</span>
+      <h3>Marketing Intern</h3>
+      <dl class="brief">
+        <dt>The brief</dt>
+        <dd>Grow the business, and find who we weren’t selling to yet.</dd>
+        <dt>What I did</dt>
+        <dd><ul>
+          <li>Ran market research to find untapped customer segments.</li>
+          <li>Designed and executed the go-to-market strategy.</li>
+          <li>Worked with leadership so marketing moves matched the growth targets.</li>
+        </ul></dd>
+        <dt>What came out</dt>
+        <dd>
+          <svg class="chart" viewBox="0 0 380 200" role="img" aria-label="Bar chart drawn to scale: turnover ₹3 crore before, ₹11 crore after, in FY2025–26">
+            <defs><pattern id="hatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(40)"><rect width="7" height="7" fill="#FCF6E6"/><path d="M0 0v7" stroke="#16120C" stroke-width="1.6"/></pattern></defs>
+            <path d="M14 168 C 120 166, 250 170, 366 167" fill="none" stroke="#16120C" stroke-width="2.4" stroke-linecap="round"/>
+            <path d="M44 168 L44 131 L128 129 L128 168Z" fill="url(#hatch)" stroke="#16120C" stroke-width="2.4" stroke-linejoin="round"/>
+            <path d="M206 168 L204 28 L292 30 L292 168Z" fill="#16120C" stroke="#16120C" stroke-width="2.4" stroke-linejoin="round"/>
+            <text x="86" y="121" text-anchor="middle" class="big">₹3 Cr</text>
+            <text x="248" y="20" text-anchor="middle" class="big">₹11 Cr</text>
+            <text x="86" y="188" text-anchor="middle">before</text>
+            <text x="248" y="188" text-anchor="middle">after, FY2025–26</text>
+            <path d="M138 110 C 160 70, 176 52, 198 42" fill="none" stroke="#1B2E9A" stroke-width="3.5" stroke-linecap="round"/>
+            <path d="M184 40 L199 41 L192 54" fill="none" stroke="#1B2E9A" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <text x="304" y="108" class="hw">+267%</text>
+          </svg>
+        </dd>
+      </dl>
+    </article>
+
+    <article class="file f-sb rv" style="--i:1">
+      <span class="tab">Case file · Starbucks outlet</span>
+      <h3>Social Media Handler</h3>
+      <dl class="brief">
+        <dt>The brief</dt>
+        <dd>Make a franchise outlet’s Instagram feel local without breaking a global brand.</dd>
+        <dt>What I did</dt>
+        <dd><ul>
+          <li>Managed the outlet’s Instagram presence.</li>
+          <li>Curated localized content in line with the brand’s global identity.</li>
+          <li>Built engagement strategies to grow interaction and the local customer base.</li>
+        </ul></dd>
+        <dt>What came out</dt>
+        <dd><p class="nope">No follower number to quote here, so I won’t invent one. Ask me and I’ll walk you through the posts.</p></dd>
+      </dl>
+    </article>
+
+    <article class="file f-tvs rv">
+      <span class="tab">Case file · TVS Dealership</span>
+      <h3>Marketing Intern</h3>
+      <dl class="brief">
+        <dt>The brief</dt>
+        <dd>Get product promotions in front of people.</dd>
+        <dt>What I did</dt>
+        <dd><ul>
+          <li>Assisted in developing and executing promotional campaigns.</li>
+          <li>Designed the promotional material: flyers, posters and banners.</li>
+        </ul></dd>
+        <dt>What came out</dt>
+        <dd>Flyers, posters and banners, designed by me.</dd>
+      </dl>
+    </article>
+    <div class="f-note rv" style="--i:1"><span class="hand">← smallest file, same effort</span></div>
+  </div>
+
+  <div class="desk">
+    <h3 class="sub">On my desk</h3>
+    <div class="tags">
+      <span class="tag rv">Market research</span>
+      <span class="tag rv" style="--i:1">Go-to-market strategy</span>
+      <span class="tag rv" style="--i:2">Content calendar planning</span>
+      <span class="tag rv" style="--i:3">Canva <small>flyers, posters, banners</small></span>
+      <span class="tag rv" style="--i:4">Instagram growth <small>my own page: 3,000 followers</small></span>
+    </div>
+    <div class="luggage">
+      <span class="lug rv">English</span>
+      <span class="lug rv" style="--i:1">Hindi</span>
+      <span class="lug rv" style="--i:2">Deutsch <small>basic, formally trained. Don’t quiz me yet.</small></span>
+    </div>
+  </div>
+
+  <!-- chalkboard -->
+  <section class="board rv" id="teach" aria-labelledby="h-teach">
+    <div>
+      <p class="typed">Teaching volunteer · NGO for underprivileged children’s education</p>
+      <h2 id="h-teach">The hardest brief I’ve had came with a blackboard and no budget.</h2>
+      <p>I taught foundational literacy and numeracy to underprivileged children.</p>
+      <p>Then I helped raise funds for their education and their standard of living. It’s on a marketing page because explaining something simply is most of the job.</p>
+    </div>
+    <div class="chalk-side" aria-hidden="true"><span>A B C</span><span>1 + 1 = 2</span><span>read.<small>then everything else</small></span></div>
+    <blockquote>“Education is the most powerful weapon which you can use to change the world.”<cite>Nelson Mandela</cite></blockquote>
+  </section>
+
+  <div class="proof" id="proof">
+    <h3 class="sub">Pinned to the board</h3>
+    <div class="pinboard">
+      <article class="note n1 rv"><span class="pin" aria-hidden="true"></span>
+        <p class="typed">Achievement</p>
+        <h4>Appreciation Certificate from Shri Rajnath Singh</h4>
+        <p>Minister of Defence, Government of India, for outstanding performance in the Class X Boards.</p>
+        <span class="stamp" style="margin-top:6px">Class X Boards</span>
+      </article>
+      <article class="note n2 rv" style="--i:1"><span class="pin" aria-hidden="true"></span>
+        <p class="typed">Achievement</p>
+        <h4>Hosted the International Chief Justice Conference</h4>
+        <p>As a Student Council representative. I also hosted Celesta.</p>
+      </article>
+      <article class="note n3 rv"><span class="pin" aria-hidden="true"></span>
+        <p class="typed">Leadership</p>
+        <h4>Club Head, Storytelling Club</h4>
+        <p>I organised events, mentored members and built a culture of creative communication.</p>
+      </article>
+      <article class="note n4 rv" style="--i:1"><span class="pin" aria-hidden="true"></span>
+        <p class="typed">School record</p>
+        <h4>IIM Bangalore, BBA Digital Business &amp; Entrepreneurship</h4>
+        <p>First year. Before that: City Montessori School, Class XII Science (PCM), 95% aggregate, 97% in English.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- the bridge from Desire to Action -->
+<section class="sec" id="fit" aria-labelledby="h-fit">
+  <h2 class="hook" id="h-fit">Say you hire me. Monday looks like this.</h2>
+  <ul class="monday">
+    <li class="rv"><span class="tick"><svg viewBox="0 0 44 44" aria-hidden="true"><path pathLength="1" d="M6 24 L17 35 L40 6"/></svg></span><span><b>Research before opinions.</b>At Mishra I started by finding customers nobody was serving. I’d start your client the same way.</span></li>
+    <li class="rv" style="--i:1"><span class="tick"><svg viewBox="0 0 44 44" aria-hidden="true"><path pathLength="1" d="M6 24 L17 35 L40 6"/></svg></span><span><b>Content that sounds like the brand and the town.</b>The Starbucks outlet taught me how.</span></li>
+    <li class="rv"><span class="tick"><svg viewBox="0 0 44 44" aria-hidden="true"><path pathLength="1" d="M6 24 L17 35 L40 6"/></svg></span><span><b>Strategy, caption, flyer. Same person.</b>I’ve done all three, so nothing waits for a hand-off.</span></li>
+    <li class="rv" style="--i:1"><span class="tick"><svg viewBox="0 0 44 44" aria-hidden="true"><path pathLength="1" d="M6 24 L17 35 L40 6"/></svg></span><span><b>Switching clients doesn’t scare me.</b>Four roles in four different settings. A week with several accounts is familiar.</span></li>
+  </ul>
+  <figure class="card rv">
+    <span class="tape" aria-hidden="true"></span>
+    <p class="typed">Client feedback, round 7</p>
+    <blockquote>“It ain’t about how hard you hit. It’s about how hard you can get hit and keep moving forward.”</blockquote>
+    <cite>Rocky Balboa, in Rocky Balboa (2006). Also my policy on revisions.</cite>
+  </figure>
+</section>
+
+<!-- ============ A: ACTION ============ -->
+<section class="sec close" id="hello" aria-labelledby="h-hello">
+  <span class="idx" title="Action" aria-hidden="true"><i>A</i></span>
+  <h2 class="hook" id="h-hello">Got a client stuck at a number they hate?</h2>
+  <p class="hand">Send me the brief.</p>
+
+  <ul class="reach rv">
+    <li><span class="lab">Email</span><span class="val" id="v-mail">divyansh.shukla326@iimb.ac.in</span>
+      <span class="acts"><button class="copy" type="button" data-copy="divyansh.shukla326@iimb.ac.in" data-target="v-mail">Copy</button><a href="mailto:divyansh.shukla326@iimb.ac.in">Open mail</a></span></li>
+    <li><span class="lab">Phone</span><span class="val" id="v-tel">+91 99181 33966</span>
+      <span class="acts"><button class="copy" type="button" data-copy="+91 99181 33966" data-target="v-tel">Copy</button><a href="tel:+919918133966">Call</a></span></li>
+    <li><span class="lab">Instagram</span><span class="val">@divyansh_._kaushal_</span>
+      <span class="acts"><a href="https://www.instagram.com/divyansh_._kaushal_/" target="_blank" rel="noopener">Open</a></span></li>
+  </ul>
+
+  <p class="cv-row"><!-- CV: put Divyansh_Shukla_CV.pdf in the same folder as this file -->
+    <a class="btn" href="Divyansh_Shukla_CV.pdf" target="_blank" rel="noopener">Download my CV <span aria-hidden="true">↓</span></a>
+    <span class="hand">one page, no surprises</span></p>
+
+  <figure class="final rv">
+    <blockquote>“If you want something, <mark>go get it.</mark> Period.”</blockquote>
+    <cite>Chris Gardner, The Pursuit of Happyness (2006)</cite>
+  </figure>
+
+  <footer>
+    <p class="hand">That’s the last page. 404: more pages not found yet. I’m 19, still filling this notebook.</p>
+    <p>Divyansh Kaushal Shukla · Lucknow / IIM Bangalore · Hand-built in a single HTML file.</p>
+  </footer>
+</section>
+
+</main>
+</div>
+
+<script>
+(function(){
+  var root=document.documentElement; root.classList.add('js');
+  var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function fmt(n){try{return Math.round(n).toLocaleString('en-IN')}catch(e){return String(Math.round(n))}}
+
+  // count-up: the HTML already holds the final number, so nothing breaks without JS
+  function run(el){
+    if(reduce||el._done) return; el._done=true;
+    var to=parseFloat(el.getAttribute('data-count')), from=parseFloat(el.getAttribute('data-from')||0), dur=1500, t0=null;
+    function step(t){ if(t0===null) t0=t; var p=Math.min((t-t0)/dur,1), e=1-Math.pow(1-p,3);
+      el.textContent=fmt(from+(to-from)*e); if(p<1) requestAnimationFrame(step); }
+    el.textContent=fmt(from); requestAnimationFrame(step);
+  }
+  function counts(node){ if(node.hasAttribute&&node.hasAttribute('data-count')) run(node);
+    node.querySelectorAll('[data-count]').forEach(run); }
+
+  // staggered scroll reveal (movement only, content is never hidden)
+  var items=[].slice.call(document.querySelectorAll('.rv'));
+  if(reduce||!('IntersectionObserver' in window)){ items.forEach(function(e){e.classList.add('in')}); }
+  else{
+    var io=new IntersectionObserver(function(es){ es.forEach(function(x){
+      if(x.isIntersecting){ x.target.classList.add('in'); counts(x.target); io.unobserve(x.target); } }); },
+      {threshold:.15,rootMargin:'0px 0px -5% 0px'});
+    items.forEach(function(e){ io.observe(e); });
+  }
+
+  // nav: highlight the section being read
+  var links=[].slice.call(document.querySelectorAll('#navlinks a'));
+  var map={}; links.forEach(function(a){ map[a.getAttribute('href').slice(1)]=a; });
+  if('IntersectionObserver' in window){
+    var so=new IntersectionObserver(function(es){ es.forEach(function(x){
+      if(x.isIntersecting){ links.forEach(function(a){a.removeAttribute('aria-current')});
+        var a=map[x.target.id]; if(a) a.setAttribute('aria-current','true'); } }); },
+      {rootMargin:'-35% 0px -55% 0px'});
+    Object.keys(map).forEach(function(id){ var s=document.getElementById(id); if(s) so.observe(s); });
+  }
+
+  // mobile index menu
+  var nav=document.getElementById('nav'), btn=document.getElementById('menu');
+  btn.addEventListener('click',function(){ var o=nav.classList.toggle('open'); btn.setAttribute('aria-expanded',o); });
+  links.forEach(function(a){ a.addEventListener('click',function(){ nav.classList.remove('open'); btn.setAttribute('aria-expanded',false); }); });
+
+  // copy buttons (with a select-the-text fallback)
+  document.querySelectorAll('.copy').forEach(function(b){
+    b.addEventListener('click',function(){
+      var txt=b.getAttribute('data-copy'), tgt=document.getElementById(b.getAttribute('data-target'));
+      function done(){ var old=b.textContent; b.textContent='Copied'; setTimeout(function(){b.textContent=old},1600); }
+      function fallback(){ if(tgt){ var r=document.createRange(); r.selectNodeContents(tgt); var s=getSelection(); s.removeAllRanges(); s.addRange(r); } b.textContent='Selected'; setTimeout(function(){b.textContent='Copy'},1600); }
+      try{ navigator.clipboard.writeText(txt).then(done,fallback); }catch(e){ fallback(); }
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
